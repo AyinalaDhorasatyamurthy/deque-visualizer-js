@@ -1,0 +1,121 @@
+body
+{
+  background: linear-gradient(rgba(227, 236, 235, 0.6), rgba(243, 238, 241, 0.6)), url(car.jpg) no-repeat fixed;
+  background-position: center;
+  background-size: cover;
+}
+#animation {
+    margin-bottom: 20px;
+    background: linear-gradient(rgba(227, 232, 231, 0.6), rgba(226, 221, 224, 0.6)), url(car.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  h1
+  {
+    margin: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(32, 144, 181);
+    color: aliceblue;
+    text-align: center;
+  }
+  
+  #deque-container {
+    display: flex;
+    justify-content: center;
+  }
+  .deque-front {
+    animation: moveFront 1s infinite alternate;
+  }
+
+  .deque-rear {
+    animation: moveRear 1s infinite alternate;
+  }
+
+  @keyframes moveFront {
+    0% {
+      transform: translateX(10px);
+    }
+
+    100% {
+      transform: translateX(-50px);
+    }
+  }
+
+  @keyframes moveRear {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(50px);
+    }
+  }
+  
+  .deque-item {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(169, 227, 246);
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+.io {
+  display: flex;
+}
+
+  .operations {
+    background: linear-gradient(rgba(251, 249, 249, 0.6), rgba(247, 242, 242, 0.6)), url() no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    justify-content: space-between;
+    padding: 10px 20px;
+    text-align: center;
+   
+  }
+  
+  .algorithm {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(car.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    width: 85%;
+    text-align: center;
+  }
+  
+  button {
+    margin-top: 5%;
+    width: 200px;
+    height: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(16, 16, 16);
+    background: transparent;
+    backdrop-filter: blur(15px);
+     transition: 0.5s;
+    font-size:small;
+    color: rgb(11, 11, 11);
+    cursor: pointer;
+    position:relative;
+}
+span {
+    background-color: rgba(11, 53, 69, 0.993);
+    height: 0;
+    width: 100%;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 1s;
+}
+button:hover
+{
+   height: 50px;
+   width: 250px;
+   backdrop-filter: blur(55px);
+}

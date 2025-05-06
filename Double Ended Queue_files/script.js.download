@@ -1,0 +1,60 @@
+const deque = []; // Double Ended Queue implementation using an array
+
+function enqueueFront() {
+  const value = prompt("Enter the value to enqueue at the front:");
+  deque.unshift(value); // Add item to the front of the deque array
+  updateAnimation();
+  updateAlgorithm("Enqueue Front: " + value);
+  displayAlgorithmSteps(`Enqueued '${item}' at the front.`);
+}
+
+function dequeueFront() {
+  const value = deque.shift(); // Remove item from the front of the deque array
+  updateAnimation();
+  updateAlgorithm("Dequeue Front: " + value);
+  displayAlgorithmSteps(`Dequeued '${item}' from the front.`);
+}
+
+function enqueueRear() {
+  const value = prompt("Enter the value to enqueue at the rear:");
+  deque.push(value); // Add item to the rear of the deque array
+  updateAnimation();
+  updateAlgorithm("Enqueue Rear: " + value);
+  displayAlgorithmSteps(`Enqueued '${item}' at the front.`);
+}
+
+function dequeueRear() {
+  const value = deque.pop(); // Remove item from the rear of the deque array
+  updateAnimation();
+  updateAlgorithm("Dequeue Rear: " + value);
+  displayAlgorithmSteps(`Dequeued '${item}' from the front.`);
+}
+
+function isEmpty() {
+  const empty = deque.length == 0;
+  const message = empty ? "The deque is empty." : "The deque is not empty.";
+  updateAlgorithm(message);
+  alert(message);
+      displayAlgorithmSteps(`Is Empty? - ${message}`);
+  
+}
+
+function updateAnimation() {
+  const dequeContainer = document.getElementById("deque-container");
+  dequeContainer.innerHTML = ""; // Clear the deque container
+
+  for (let item of deque) {
+    const dequeItem = document.createElement("div");
+    dequeItem.classList.add("deque-item");
+    dequeItem.textContent = item;
+    dequeContainer.appendChild(dequeItem);
+  }
+}
+
+function updateAlgorithm(message) {
+  const algorithmDescription = document.getElementById("algorithm-description");
+  algorithmDescription.textContent = message;
+}
+function displayAlgorithmSteps(step) {
+  algorithmSteps.innerHTML += `<p>${step}</p>`;
+}

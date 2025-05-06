@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Team - Double Ended Queue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .about-container {
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 4rem 5%;
+            color: white;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: #4361ee;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            background: #3f37c9;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-info {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            padding: 2rem;
+            background: #2d2d2d;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4361ee, #4cc9f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #4361ee, #4cc9f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .team-section, .project-details, .tech-stack {
+            margin-top: 4rem;
+        }
+
+        .team-grid, .features-grid, .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-card, .feature-card, .tech-card {
+            background: #2d2d2d;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: all 0.3s ease;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+        }
+
+        .team-card:hover, .feature-card:hover, .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            background: #363636;
+        }
+
+        .avatar-circle {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4361ee, #4cc9f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .team-role {
+            color: #4cc9f0;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-education {
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-contribution {
+            color: #b3b3b3;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 1rem;
+            background: #363636;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4cc9f0;
+        }
+
+        .tech-card i {
+            font-size: 3rem;
+            color: #4cc9f0;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.02); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2.5rem;
+            }
+            
+            .team-grid, .features-grid, .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <a href="Double Ended Queue.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Demo
+        </a>
+
+        <div class="project-info">
+            <h1 class="about-title">Double Ended Queue Visualization</h1>
+            <p>An interactive visualization tool for understanding Double Ended Queue data structure operations.</p>
+        </div>
+
+        <div class="project-details">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3>Interactive Learning</h3>
+                    <p>Visual representation of queue operations with real-time animations</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb feature-icon"></i>
+                    <h3>Concept Clarity</h3>
+                    <p>Clear visualization of front and rear operations in double-ended queue</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3>Core Operations</h3>
+                    <p>Insert and delete operations from both ends of the queue</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card" style="animation-delay: 0.2s">
+                    <div class="avatar-circle">👨‍💻</div>
+                    <h3 class="team-name">A DHORASATYAMURTHY</h3>
+                    <p class="team-role"> Developer</p>
+                    <p class="team-education">B.Tech CSE</p>
+                    <p class="team-contribution">Developed an interactive Double Ended Queue visualization with HTML, CSS, and JavaScript. Implemented core deque operations, real-time animations, and algorithm demonstrations for educational purposes.</p>                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <p>Structure and content</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <p>Styling and animations</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Interactive functionality</p>
+                </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
